@@ -9,17 +9,14 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Publisher {
 
   public static void main(String[] args) {
-    String topic        = "Temperature";
-    String content      = "Message from MqttPublishSample";
+    String topic        = "temperature";
+    String content;
     int qos             = 2;
     String broker       = "tcp://mqtt.eclipse.org:1883";
     String clientId     = "JavaSample";
     MemoryPersistence persistence = new MemoryPersistence();
-
     Random r = new Random();
     int temp;
-    String content;
-
 
     try {
         MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
